@@ -28,8 +28,8 @@ import {
 const mockSubscribers = [
   {
     id: 1,
-    email: 'john.doe@example.com',
-    name: 'John Doe',
+    email: 'kwame.asante@example.com',
+    name: 'Kwame Asante',
     subscribeDate: '2024-01-15',
     status: 'Active',
     source: 'Website',
@@ -37,8 +37,8 @@ const mockSubscribers = [
   },
   {
     id: 2,
-    email: 'sarah.johnson@example.com',
-    name: 'Sarah Johnson',
+    email: 'akua.mensah@example.com',
+    name: 'Akua Mensah',
     subscribeDate: '2024-01-14',
     status: 'Active',
     source: 'Social Media',
@@ -46,8 +46,8 @@ const mockSubscribers = [
   },
   {
     id: 3,
-    email: 'michael.brown@example.com',
-    name: 'Michael Brown',
+    email: 'kofi.osei@example.com',
+    name: 'Kofi Osei',
     subscribeDate: '2024-01-13',
     status: 'Unsubscribed',
     source: 'Referral',
