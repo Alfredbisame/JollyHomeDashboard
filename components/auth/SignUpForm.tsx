@@ -3,15 +3,15 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Mail, Lock, User, Eye, EyeOff, Shield, CheckCircle } from 'lucide-react';
-import { FcGoogle } from "react-icons/fc";
 import React, { useState } from 'react';
+import { SocialAuthSection } from './SocialAuthSection';
 
 interface SignUpFormProps {
   isLoading: boolean;
   userType: string;
   setUserType: (value: string) => void;
   onSubmit: (e: React.FormEvent) => void;
-  onGoogleSignIn: () => void;
+  onGoogleSignIn: (role?: string) => void;
 }
 
 export const SignUpForm: React.FC<SignUpFormProps> = ({ 
@@ -246,28 +246,12 @@ export const SignUpForm: React.FC<SignUpFormProps> = ({
         </Button>
       </form>
 
-      {/* Divider */}
-      <div className="relative my-8">
-        <div className="absolute inset-0 flex items-center">
-          <div className="w-full border-t-2 border-white/30" />
-        </div>
-        <div className="relative flex justify-center">
-          <span className="bg-white/20 backdrop-blur-xl px-6 py-2 text-sm font-medium text-white/90 rounded-full border border-white/30 shadow-lg">
-            Or sign up with
-          </span>
-        </div>
-      </div>
-
-      {/* Google Sign Up Button */}
-      <Button
-        variant="outline"
-        className="w-full h-14 py-4 rounded-2xl border-2 border-white/30 bg-white/20 backdrop-blur-xl hover:bg-white/30 hover:border-white/50 text-white font-semibold text-base shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3 transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
-        onClick={onGoogleSignIn}
-        disabled={isLoading}
-      >
-        <FcGoogle className="w-6 h-6" />
-        <span>Continue with Google</span>
-      </Button>
+      <SocialAuthSection 
+        isLoading={isLoading}
+        onGoogleSignIn={onGoogleSignIn}
+        dividerText="Or sign up with"
+        buttonText="Continue with Google"
+      />
 
       {/* Additional Help Text */}
       <div className="mt-6 text-center">
